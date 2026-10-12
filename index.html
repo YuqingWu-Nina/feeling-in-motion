@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feeling in Motion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="experience">
+    <header class="intro">
+      <p class="eyebrow">AN ABSTRACT SENSATION STUDY</p>
+      <h1>Feeling in Motion</h1>
+      <p class="subtitle">Choose a sensation, set its intensity, then draw where you feel it.</p>
+    </header>
+
+    <section class="studio" aria-label="Sensation drawing studio">
+      <div class="canvas-frame">
+        <canvas id="drawingCanvas" aria-label="Interactive canvas for drawing abstract sensation marks"></canvas>
+        <p class="canvas-hint">Click or drag to leave a mark</p>
+      </div>
+
+      <aside class="controls" aria-label="Drawing controls">
+        <fieldset class="brushes">
+          <legend>Choose a sensation</legend>
+          <button class="brush selected" type="button" data-brush="pulsing">
+            <span class="brush-icon pulse-icon"></span><span><strong>Pulsing</strong><small>organic circles</small></span>
+          </button>
+          <button class="brush" type="button" data-brush="burning">
+            <span class="brush-icon burn-icon">⌁</span><span><strong>Burning</strong><small>jagged lines</small></span>
+          </button>
+          <button class="brush" type="button" data-brush="blockage">
+            <span class="brush-icon block-icon">•••</span><span><strong>Blockage</strong><small>dense clusters</small></span>
+          </button>
+          <button class="brush" type="button" data-brush="soreness">
+            <span class="brush-icon sore-icon">〰</span><span><strong>Soreness</strong><small>soft curves</small></span>
+          </button>
+        </fieldset>
+
+        <div class="intensity-control">
+          <label for="intensity">Intensity <output id="intensityValue" for="intensity">50</output></label>
+          <input id="intensity" type="range" min="0" max="100" value="50">
+          <div class="scale" aria-hidden="true"><span>pale</span><i></i><span>deep</span></div>
+        </div>
+
+        <div class="actions">
+          <button id="animateButton" class="primary-action" type="button">Bring to Life</button>
+          <button id="pauseButton" type="button" disabled>Pause</button>
+          <button id="clearButton" class="clear-action" type="button">Clear Canvas</button>
+        </div>
+        <p id="statusMessage" class="status" aria-live="polite">Drawing is still. Add a sensation mark.</p>
+      </aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
